@@ -1,0 +1,29 @@
+# Python / Backend
+backend/venv/
+backend/env/
+__pycache__/
+*.py[cod]
+*$py.class
+backend/.env
+backend/edusync.db
+
+
+# Node.js / Frontend (Note: frontend/ folder also has its own Vite .gitignore)
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs / Editor configurations
+.vscode/
+.idea/
+*.swp
+*.swo
