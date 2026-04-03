@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import init_db
 from routes.tasks import router as tasks_router
 from routes.attendance import router as attendance_router
+from routes.auth import router as auth_router
+
 
 def create_app() -> FastAPI:
     app = FastAPI(
@@ -24,6 +26,7 @@ def create_app() -> FastAPI:
     init_db()
 
     # Register APIRouters instead of Blueprints
+    app.include_router(auth_router, prefix="/auth", tags=["Authentication"])
     app.include_router(tasks_router, prefix="/tasks", tags=["Tasks"])
     app.include_router(attendance_router, prefix="/attendance", tags=["Attendance Tracker"])
 

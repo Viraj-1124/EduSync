@@ -4,9 +4,11 @@ from services.attendance_service import calculate_attendance
 
 router = APIRouter()
 
+
 class AttendanceRequest(BaseModel):
     total: int
     attended: int
+
 
 @router.post("/calculate")
 def calculate(data: AttendanceRequest):

@@ -1,18 +1,11 @@
 from fastapi import APIRouter, HTTPException, status
-from pydantic import BaseModel
 from typing import Optional, List
+from schemas.task_schema import TaskCreate, TaskUpdate
 from services.task_service import get_all_tasks, create_task, get_task_by_id, update_task_status, delete_task
 
 router = APIRouter()
 
-# Pydantic Schemas
-class TaskCreate(BaseModel):
-    title: str
-    description: Optional[str] = ""
-    deadline: Optional[str] = ""
 
-class TaskUpdate(BaseModel):
-    completed: bool
 
 @router.get("", response_model=List[dict])
 def get_tasks():
